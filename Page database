@@ -1,0 +1,29 @@
+import mysql.connector
+
+connection = mysql.connector.connect(
+
+host='localhost',
+
+user='root',
+
+password='',
+
+port='3306',
+
+database='test_py'
+
+)
+
+c = connection.cursor()
+
+select_query = 'SELECT * FROM `users_2`'
+
+c.execute(select_query)
+
+data = c.fetchall()
+
+# display data
+
+for row in data:
+
+print(row)
